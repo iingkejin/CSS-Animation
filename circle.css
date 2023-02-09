@@ -14,7 +14,7 @@
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  animation-name: load-spin;
+  /* animation-name: load-spin; */
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
@@ -25,10 +25,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   border: 20px solid transparent;
+  /* 
+  가상 요소에 border-box가 적용되지 않아서
+  border값 만큼 width, height에 값이 추가 되기 때문에
+  부모 박스 요소 크기보다 커져서 부모의 100%안에 다 못들어 온 상태
+  */
+  /* box-sizing: border-box; */
   border-top-color: rgb(250, 66, 72);
   border-left-color: rgb(93, 219, 186);
   border-bottom-color: rgb(237, 230, 112);
@@ -40,7 +46,7 @@
 }
 
 .loder:after {
-  animation-name: loadspin-opacity;
+  /* animation-name: loadspin-opacity; */
   animation-duration: 2s;
   animation-iteration-count: infinite;
 }
